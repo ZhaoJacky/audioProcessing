@@ -41,16 +41,6 @@ class audioRecorder:
         sd.play(soundArray, samplerate=self.fs)
         sd.wait()
 
-    # Plots the sound wave recorded.
-    def plotSound(self, soundArray):
-        
-        timeVector = np.linspace(0, len(soundArray) / self.fs, num=len(soundArray))
-        plt.plot(timeVector, soundArray)
-        plt.xlabel('Time [s]')
-        plt.ylabel('Amplitude')
-        plt.title('Sound Waveform')
-        plt.show()
-
     # Saves the recorded sound to a file to the directory you run the program.
     def saveSound(self, soundArray, filename):
         sp.io.wavfile.write(filename, self.fs, soundArray)

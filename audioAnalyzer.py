@@ -20,6 +20,15 @@ def audioAnalyzer(soundArray, fs):
     def changeSampleRate(self, newSampleRate):
         self.fs = newSampleRate
 
+    # Plots the sound wave recorded in time.
+    def plotSound(self, soundArray):
+        timeVector = np.linspace(0, len(soundArray) / self.fs, num=len(soundArray))
+        plt.plot(timeVector, soundArray)
+        plt.xlabel('Time [s]')
+        plt.ylabel('Amplitude')
+        plt.title('Sound Waveform')
+        plt.show()
+
     
     
     
