@@ -1,11 +1,12 @@
 from audioRecorder import audioRecorder
+from audioTranscriber import audioTranscriber
 
 def main():
     """
     The main function of my program.
     """
 
-    fs = 44100
+    fs = 16000 # Sample rate that works with faster whisper models.
     duration = 5.0
     
     recorder = audioRecorder(fs, duration)
@@ -13,8 +14,12 @@ def main():
     recorded = recorder.record(1)
     recorder.play(recorded)
 
+    transcriber = audioTranscriber(model_size="tiny", device="cpu")
+    segments, info = transcriber.transcribe(recorded)
+
+    for segment in segments:
+        print(f"[{segment.start:.2f} --> {segment.end:.2f}] {segment.text}")
+
     
-
-
 if __name__ == "__main__":
     main()

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import sounddevice as sd
 import scipy as sp
 
+
 def audioAnalyzer(soundArray, fs):
     """
     Analyzes the audio data in soundArray recorded at sample rate fs.
@@ -18,5 +19,7 @@ def audioAnalyzer(soundArray, fs):
 
     def changeSampleRate(self, newSampleRate):
         self.fs = newSampleRate
+
+    
     
     
