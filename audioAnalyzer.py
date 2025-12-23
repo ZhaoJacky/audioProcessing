@@ -1,4 +1,3 @@
-import requests
 from audioRecorder import audioRecorder
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,12 +16,6 @@ class audioAnalyzer:
     def __init__(self, soundArray, fs):
         self.soundArray = soundArray
         self.fs = fs
-
-    def downloadData(self):
-        url = "https://github.com/karoldvl/ESC-50/archive/master.zip"
-        response = requests.get(url)
-        z = zipfile.ZipFile(io.BytesIO(response.content))
-        z.extractall("ESC-50-data")
 
     def changeSoundArray(self, newSoundArray):
         self.soundArray = newSoundArray

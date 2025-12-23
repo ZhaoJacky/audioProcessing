@@ -1,0 +1,7 @@
+Libraries Required:
+- faster-whisper
+- scipy
+- numpy
+- matplotlib
+- sounddevice
+- requests
